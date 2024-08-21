@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "builds": [
+    { "src": "api/enhance.py", "use": "@vercel/python" },
+    { "src": "public/**", "use": "@vercel/static" }
+  ],
+  "routes": [
+    { "src": "/api/enhance", "dest": "api/enhance.py" },
+    { "src": "/(.*)", "dest": "public/$1" }
+  ]
+}
